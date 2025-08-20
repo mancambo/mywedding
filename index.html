@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>동훈 & 다혜 결혼합니다</title>
+
+  <!-- 미리보기(카톡/문자)용 -->
+  <meta property="og:title" content="동훈 & 다혜 결혼합니다" />
+  <meta property="og:description" content="소중한 날, 함께해 주세요." />
+  <meta property="og:image" content="cover.jpg" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <style>
+    :root{
+      --bg:#f7f7f7;
+      --fg:#111;
+      --sub:#555;
+      --card:#fff;
+      --accent:#0a84ff;
+      --radius:14px;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0f1113; --fg:#eaeaea; --sub:#9aa0a6; --card:#15181b; --accent:#4da3ff; }
+      meta[name="theme-color"]{ content:#0f1113; }
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0; background:var(--bg); color:var(--fg);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, 'Noto Sans KR', Apple SD Gothic Neo, sans-serif;
+      line-height:1.6;
+    }
+    .wrap{ max-width:720px; margin:0 auto; padding:20px; }
+    .card{ background:var(--card); border-radius:var(--radius); padding:22px; box-shadow:0 1px 4px rgba(0,0,0,.06); }
+    header{
+      text-align:center; padding:10px 0 6px;
+    }
+    .names{ font-size:34px; font-weight:700; letter-spacing:.5px; margin:6px 0 4px; }
+    .amp{ margin:0 .2em; opacity:.7; }
+    .date{ color:var(--sub); font-size:16px; }
+    .hero{
+      margin:14px 0 18px; overflow:hidden; border-radius:var(--radius);
+      aspect-ratio: 16 / 9; background:#e9ecef; display:flex; align-items:center; justify-content:center;
+    }
+    .hero img{ width:100%; height:100%; object-fit:cover; display:block; }
+    h2{ margin:0 0 10px; font-size:18px; }
+    .section{ margin:18px 0; }
+    .row{ display:flex; gap:12px; flex-wrap:wrap; }
+    .pill{
+      display:inline-block; padding:8px 12px; border:1px solid rgba(0,0,0,.08);
+      border-radius:999px; background:transparent; color:var(--fg); text-decoration:none; cursor:pointer;
+    }
+    .pill:active{ transform:scale(.99); }
+    .btn{
+      display:inline-block; padding:12px 16px; border-radius:10px; text-decoration:none; cursor:pointer;
+      background:var(--accent); color:white; border:none; font-weight:600;
+    }
+    .muted{ color:var(--sub); }
+    .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    @media (max-width:560px){ .grid-2{ grid-template-columns:1fr; } }
+    details{ background:var(--card); border-radius:var(--radius); padding:16px; }
+    details summary{ cursor:pointer; font-weight:600; }
+    footer{ text-align:center; color:var(--sub); font-size:14px; padding:18px 0 8px; }
+    .center{ text-align:center; }
+    .sep{ height:1px; background:rgba(0,0,0,.06); margin:16px 0; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header>
+      <div class="names">동훈 <span class="amp">&amp;</span> 다혜</div>
+      <div class="date">2025년 ○월 ○일 (◯) ◯시 ◯분</div><!-- ← 날짜·시간 수정 -->
+    </header>
+
+    <div class="hero card">
+      <!-- cover.jpg를 같은 폴더에 두면 자동 표시됩니다 -->
+      <img src="cover.jpg" alt="동훈 &amp; 다혜" onerror="this.parentElement.textContent='커버 사진을 cover.jpg로 넣어주세요';this.remove();" />
+    </div>
+
+    <section class="section card">
+      <h2>초대합니다</h2>
+      <p class="muted">서로가 서로에게 따뜻한 쉼이 되어 주기로 약속했습니다.<br/>소중한 분들을 모시고 그 첫걸음을 내딛으려 합니다. 함께 해주세요.</p>
+    </section>
+
+    <section class="section grid-2">
+      <div class="card">
+        <h2>일정</h2>
+        <p><strong>2025년 ○월 ○일 (◯)</strong><br/>오후 ◯시 ◯분</p><!-- ← 일정 수정 -->
+      </div>
+      <div class="card">
+        <h2>장소</h2>
+        <p><strong>서울 ○○웨딩홀 ◯층 ◯홀</strong><br/><span class="muted">서울시 ◯◯구 ◯◯로 00</span></p><!-- ← 장소/주소 수정 -->
+        <div class="row" style="margin-top:8px">
+          <a class="btn" href="https://map.kakao.com/" target="_blank" rel="noopener">카카오맵 열기</a><!-- ← 실제 링크로 교체 -->
+          <a class="pill" href="https://naver.me/" target="_blank" rel="noopener">네이버지도</a><!-- ← 실제 링크로 교체 -->
+        </div>
+      </div>
+    </section>
+
+    <section class="section card">
+      <h2>연락처</h2>
+      <div class="row">
+        <span class="pill">신랑: 010-0000-0000</span>
+        <span class="pill">신부: 010-0000-0000</span>
+      </div>
+      <div class="sep"></div>
+      <div class="row">
+        <button class="btn" onclick="sharePage()">공유하기</button>
+        <button class="pill" onclick="copyLink()">링크 복사</button>
+      </div>
+    </section>
+
+    <section class="section">
+      <details>
+        <summary>마음 전하실 곳 (선택)</summary>
+        <div class="sep"></div>
+        <p class="muted">표기는 예시입니다. 필요 없으면 이 영역을 삭제하세요.</p>
+        <p><strong>신랑 측</strong><br/>국민 000000-00-000000 (홍길동)</p>
+        <p><strong>신부 측</strong><br/>우리 0000-000-000000 (김길동)</p>
+      </details>
+    </section>
+
+    <footer>
+      함께해 주시는 마음, 오래 기억하겠습니다. 감사합니다.
+    </footer>
+
+  </div>
+
+  <script>
+    async function copyLink(){
+      try{
+        await navigator.clipboard.writeText(location.href);
+        alert('링크가 복사되었습니다.');
+      }catch(e){
+        // iOS 등 일부 환경 대응
+        const ta=document.createElement('textarea');
+        ta.value=location.href; document.body.appendChild(ta);
+        ta.select(); document.execCommand('copy'); ta.remove();
+        alert('링크가 복사되었습니다.');
+      }
+    }
+    function sharePage(){
+      if(navigator.share){
+        navigator.share({
+          title: document.title,
+          text: '함께해 주세요 💌',
+          url: location.href
+        }).catch(()=>{});
+      }else{
+        copyLink();
+      }
+    }
+  </script>
+</body>
+</html>
+필요하면 날짜/장소만 알려주면 그 값으로 딱 맞춰서 더 예쁘게 커스터마이즈해줄게. (예: 지도 링크 완성, 표기 통일, 부모님 성함/혼주 표기, 식순 이미지 추가 등)
+
+
+
+
+
+
+
+나의 말:
+직접 코딩: HTML + CSS + JS → 완전 내 마음대로 디자인
+
+
+ChatGPT의 말:
+
+7s 동안 생각함
+좋아—그럼 완전 내 마음대로 커스터마이징 가능한 깔끔 미니멀 템플릿을 바로 줄게.
+아래 코드는 한 파일(index.html) 로 끝나고, 핵심 기능이 다 들어 있어요:
+
+반응형/다크모드
+
+D-Day 카운트다운
+
+카카오·네이버 지도 버튼
+
+링크 복사/네이티브 공유
+
+.ics(캘린더 추가) 파일 자동 생성
+
+갤러리(스와이프/탭으로 넘기기)
+
+계좌 안내(토글로 숨김/표시)
+
+웹폰트/외부 라이브러리 없이 순수 HTML+CSS+JS
+
+파일 저장 후 cover.jpg만 같은 폴더에 넣으면 바로 작동합니다.
+상단 CONFIG 구역만 너희 정보로 바꾸면 끝!
+
+html
+복사
+편집
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>동훈 & 다혜 결혼합니다</title>
+
+  <!-- 미리보기(카톡/문자)용 -->
+  <meta property="og:title" content="동훈 & 다혜 결혼합니다">
+  <meta property="og:description" content="소중한 날, 함께해 주세요.">
+  <meta property="og:image" content="cover.jpg">
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+    :root{
+      --bg:#f7f7f7; --fg:#111; --sub:#666; --card:#fff; --line:rgba(0,0,0,.08); --accent:#0a84ff;
+      --radius:16px; --gap:14px; --shadow:0 1px 6px rgba(0,0,0,.06);
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0f1113; --fg:#eee; --sub:#9aa0a6; --card:#15181b; --line:rgba(255,255,255,.08); --accent:#4da3ff;
+      }
+      meta[name="theme-color"]{ content:#0f1113; }
+    }
+    *{ box-sizing:border-box; }
+    html,body{ margin:0; padding:0; background:var(--bg); color:var(--fg); font-family: system-ui, -apple-system, Segoe UI, Roboto, 'Noto Sans KR', Apple SD Gothic Neo, sans-serif; }
+    .wrap{ max-width:780px; margin:0 auto; padding:18px; }
+    .card{ background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px; }
+    header{ text-align:center; padding:8px 0 2px; }
+    .names{ font-size:38px; font-weight:800; letter-spacing:.2px; }
+    .amp{ opacity:.7; margin:0 .22em; }
+    .date{ color:var(--sub); font-size:16px; }
+    .hero{ overflow:hidden; border-radius:var(--radius); margin:14px 0 18px; aspect-ratio: 16/9; background:#e9ecef; display:flex; align-items:center; justify-content:center; }
+    .hero img{ width:100%; height:100%; object-fit:cover; display:block; }
+    h2{ margin:0 0 10px; font-size:18px; }
+    .section{ margin:16px 0; }
+    .muted{ color:var(--sub); }
+    .row{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+    .btn{
+      appearance:none; border:0; border-radius:12px; background:var(--accent); color:#fff; padding:12px 16px; font-weight:700; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:8px;
+    }
+    .pill{ border:1px solid var(--line); background:transparent; color:var(--fg); border-radius:999px; padding:8px 12px; text-decoration:none; display:inline-flex; align-items:center; gap:6px; cursor:pointer; }
+    .pill:active,.btn:active{ transform:scale(.99); }
+    .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:var(--gap); }
+    @media (max-width:640px){ .grid-2{ grid-template-columns:1fr; } }
+    .sep{ height:1px; background:var(--line); margin:14px 0; }
+    details{ border-radius:12px; padding:0; overflow:hidden; }
+    details summary{ list-style:none; cursor:pointer; padding:14px 16px; font-weight:700; background:var(--card); }
+    details[open] summary{ border-bottom:1px solid var(--line); }
+    details .panel{ padding:14px 16px; background:var(--card); }
+    .center{text-align:center;}
+    .badge{ font-size:12px; color:#fff; background:var(--accent); border-radius:6px; padding:4px 8px; font-weight:700; }
+    /* 갤러리 */
+    .gallery{ position:relative; overflow:hidden; border-radius:var(--radius); }
+    .track{ display:flex; transition:transform .35s ease; }
+    .slide{ min-width:100%; }
+    .slide img{ width:100%; height:380px; object-fit:cover; display:block; background:#e9ecef; }
+    .g-ctrl{ display:flex; justify-content:space-between; position:absolute; inset:auto 0 10px 0; padding:0 10px; }
+    .g-ctrl button{ background:rgba(0,0,0,.35); color:#fff; border:0; border-radius:12px; padding:8px 12px; cursor:pointer; }
+    /* 카운트다운 */
+    .count{ display:flex; gap:10px; justify-content:center; }
+    .count .box{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 12px; min-width:64px; text-align:center; }
+    .count .num{ font-size:20px; font-weight:800; }
+    .count .lab{ font-size:12px; color:var(--sub); margin-top:2px; }
+    footer{ text-align:center; color:var(--sub); font-size:13px; padding:22px 0 12px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- ===== CONFIG: 여기를 너희 정보로 바꾸면 됨 ===== -->
+    <script>
+      const CONFIG = {
+        coupleNames: "동훈 & 다혜",
+        dateStr: "2025-10-11",      // YYYY-MM-DD
+        startTime: "13:00",         // HH:mm (24h)
+        endTime: "15:00",           // HH:mm (캘린더용)
+        hallName: "서울 ○○웨딩홀 ◯층 ◯홀",
+        address: "서울시 ◯◯구 ◯◯로 00",
+        kakaoMap: "https://map.kakao.com/",  // 실제 장소 공유 링크로 교체
+        naverMap: "https://naver.me/",       // 실제 장소 공유 링크로 교체
+        groomPhone: "010-0000-0000",
+        bridePhone: "010-0000-0000",
+        notes: "서로가 서로에게 따뜻한 쉼이 되어 주기로 약속했습니다. 소중한 분들을 모시고 그 첫걸음을 내딛으려 합니다.",
+        accounts: [
+          { side:"신랑 측", bank:"국민", number:"000000-00-000000", name:"홍길동" },
+          { side:"신부 측", bank:"우리", number:"0000-000-000000", name:"김길동" }
+        ],
+        gallery: [
+          "cover.jpg",         // 최소 1장은 권장
+          // 필요하면 추가: "img2.jpg","img3.jpg"
+        ]
+      };
+    </script>
+    <!-- ===== /CONFIG ===== -->
+
+    <header class="card center">
+      <div class="names"><span id="names"></span></div>
+      <div class="date"><span id="prettyDate"></span></div>
+    </header>
+
+    <div class="hero card">
+      <img src="cover.jpg" alt="커버" onerror="this.parentElement.textContent='cover.jpg를 같은 폴더에 넣어주세요';this.remove();" />
+    </div>
+
+    <section class="section card center">
+      <h2>초대합니다</h2>
+      <p class="muted" id="notes"></p>
+      <div class="sep"></div>
+      <div class="count" id="countdown" aria-label="결혼식까지 남은 시간">
+        <div class="box"><div class="num" id="dd">--</div><div class="lab">일</div></div>
+        <div class="box"><div class="num" id="hh">--</div><div class="lab">시간</div></div>
+        <div class="box"><div class="num" id="mm">--</div><div class="lab">분</div></div>
+        <div class="box"><div class="num" id="ss">--</div><div class="lab">초</div></div>
+      </div>
+    </section>
+
+    <section class="section grid-2">
+      <div class="card">
+        <h2>일정</h2>
+        <p><strong id="schedLine">-</strong></p>
+        <div class="row">
+          <button class="btn" onclick="downloadICS()">캘린더에 추가 (.ics)</button>
+        </div>
+      </div>
+      <div class="card">
+        <h2>장소</h2>
+        <p><strong id="hall"></strong><br><span class="muted" id="addr"></span></p>
+        <div class="row" style="margin-top:8px">
+          <a class="btn" id="kakaoBtn" target="_blank" rel="noopener">카카오맵 열기</a>
+          <a class="pill" id="naverBtn" target="_blank" rel="noopener">네이버지도</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section card">
+      <h2>연락처</h2>
+      <div class="row">
+        <span class="pill">신랑: <a href="#" id="groomTel"></a></span>
+        <span class="pill">신부: <a href="#" id="brideTel"></a></span>
+      </div>
+      <div class="sep"></div>
+      <div class="row">
+        <button class="btn" onclick="sharePage()">공유하기</button>
+        <button class="pill" onclick="copyLink()">링크 복사</button>
+      </div>
+    </section>
+
+    <section class="section">
+      <details class="card">
+        <summary>마음 전하실 곳 (선택)</summary>
+        <div class="panel" id="accounts"></div>
+      </details>
+    </section>
+
+    <section class="section card">
+      <h2>갤러리</h2>
+      <div class="gallery" id="gallery">
+        <div class="track" id="track"></div>
+        <div class="g-ctrl"><button onclick="prev()">이전</button><button onclick="next()">다음</button></div>
+      </div>
+      <p class="muted center" style="margin-top:8px"><span class="badge" id="gIndex">1 / 1</span></p>
+    </section>
+
+    <footer>함께해 주시는 마음, 오래 기억하겠습니다. 감사합니다.</footer>
+  </div>
+
+  <script>
+    // ---------- 유틸 ----------
+    const $ = (sel) => document.querySelector(sel);
+    const pad = (n) => String(n).padStart(2,'0');
+    const toTelLink = (num) => `tel:${num.replaceAll('-','')}`;
+
+    // ---------- 초기 렌더 ----------
+    (function init(){
+      $('#names').textContent = CONFIG.coupleNames;
+      const d = new Date(`${CONFIG.dateStr}T${CONFIG.startTime}:00`);
+      const weekdays = ['일','월','화','수','목','금','토'];
+      const pretty = `${d.getFullYear()}년 ${d.getMonth()+1}월 ${d.getDate()}일 (${weekdays[d.getDay()]}) ${CONFIG.startTime}`;
+      $('#prettyDate').textContent = pretty;
+
+      $('#notes').textContent = CONFIG.notes;
+      $('#hall').textContent = CONFIG.hallName;
+      $('#addr').textContent = CONFIG.address;
+      $('#kakaoBtn').href = CONFIG.kakaoMap;
+      $('#naverBtn').href = CONFIG.naverMap;
+
+      $('#groomTel').textContent = CONFIG.groomPhone;
+      $('#groomTel').href = toTelLink(CONFIG.groomPhone);
+      $('#brideTel').textContent = CONFIG.bridePhone;
+      $('#brideTel').href = toTelLink(CONFIG.bridePhone);
+
+      $('#schedLine').textContent = `${pretty} ~ ${CONFIG.endTime}`;
+
+      // 계좌
+      if(CONFIG.accounts?.length){
+        $('#accounts').innerHTML = CONFIG.accounts.map(ac =>
+          `<p><strong>${ac.side}</strong><br>${ac.bank} ${ac.number} (${ac.name})</p>`
+        ).join('');
+      }
+
+      // 갤러리
+      const track = $('#track');
+      (CONFIG.gallery?.length?CONFIG.gallery:[ 'cover.jpg' ]).forEach(src=>{
+        const div=document.createElement('div'); div.className='slide';
+        const img=document.createElement('img'); img.src=src; img.alt='gallery';
+        img.onerror=()=>{ img.replaceWith(Object.assign(document.createElement('div'),{textContent:'이미지를 확인하세요',style:'padding:40px;text-align:center;color:var(--sub);'})); };
+        div.appendChild(img); track.appendChild(div);
+      });
+      updateGIndex();
+
+      // 카운트다운 시작
+      startCountdown();
+      // 스와이프 제스처
+      initSwipe();
+    })();
+
+    // ---------- 링크 공유/복사 ----------
+    async function copyLink(){
+      try{
+        await navigator.clipboard.writeText(location.href);
+        alert('링크를 복사했습니다.');
+      }catch{
+        const ta=document.createElement('textarea');
+        ta.value=location.href; document.body.appendChild(ta);
+        ta.select(); document.execCommand('copy'); ta.remove();
+        alert('링크를 복사했습니다.');
+      }
+    }
+    function sharePage(){
+      if(navigator.share){
+        navigator.share({ title:document.title, text:'함께해 주세요 💌', url:location.href }).catch(()=>{});
+      }else{ copyLink(); }
+    }
+
+    // ---------- 캘린더(.ics) ----------
+    function downloadICS(){
+      const dt = CONFIG.dateStr.replaceAll('-','');
+      const st = CONFIG.startTime.replace(':','')+'00';
+      const et = CONFIG.endTime.replace(':','')+'00';
+      const uid = `${Date.now()}@invite`;
+      const sum = `${CONFIG.coupleNames} 결혼식`;
+      const loc = `${CONFIG.hallName} (${CONFIG.address})`;
+      const desc = CONFIG.notes;
+
+      const ics = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//Custom Invite//KOR//',
+        'CALSCALE:GREGORIAN',
+        'METHOD:PUBLISH',
+        'BEGIN:VEVENT',
+        `UID:${uid}`,
+        `DTSTAMP:${dt}T${st}Z`,
+        `DTSTART;TZID=Asia/Seoul:${dt}T${st}`,
+        `DTEND;TZID=Asia/Seoul:${dt}T${et}`,
+        `SUMMARY:${escapeICS(sum)}`,
+        `LOCATION:${escapeICS(loc)}`,
+        `DESCRIPTION:${escapeICS(desc)}`,
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ].join('\r\n');
+
+      const blob = new Blob([ics], {type:'text/calendar;charset=utf-8'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'wedding.ics'; a.click();
+      setTimeout(()=>URL.revokeObjectURL(url), 500);
+    }
+    function escapeICS(t=''){ return String(t).replace(/([,;])/g,'\\$1').replace(/\n/g,'\\n'); }
+
+    // ---------- 갤러리 ----------
+    let idx = 0;
+    function updateGallery(){
+      const track = $('#track');
+      track.style.transform = `translateX(${-idx*100}%)`;
+      updateGIndex();
+    }
+    function prev(){ idx = Math.max(0, idx-1); updateGallery(); }
+    function next(){
+      const total = $('#track').children.length;
+      idx = Math.min(total-1, idx+1); updateGallery();
+    }
+    function updateGIndex(){
+      const total = $('#track').children.length;
+      $('#gIndex').textContent = `${idx+1} / ${total}`;
+    }
+    function initSwipe(){
+      const g = $('#gallery');
+      let sx=0, dx=0, touching=false;
+      g.addEventListener('touchstart',e=>{ touching=true; sx=e.touches[0].clientX; });
+      g.addEventListener('touchmove',e=>{ if(!touching) return; dx=e.touches[0].clientX - sx; });
+      g.addEventListener('touchend',()=>{ touching=false; if(Math.abs(dx)>40){ if(dx<0) next(); else prev(); } dx=0; });
+    }
+
+    // ---------- 카운트다운 ----------
+    let timer=null;
+    function startCountdown(){
+      if(timer) clearInterval(timer);
+      const target = new Date(`${CONFIG.dateStr}T${CONFIG.startTime}:00+09:00`).getTime();
+      const dd=$('#dd'),hh=$('#hh'),mm=$('#mm'),ss=$('#ss');
+      const tick = ()=>{
+        const now = Date.now();
+        let diff = Math.max(0, target - now);
+        const d = Math.floor(diff / (1000*60*60*24)); diff -= d*24*60*60*1000;
+        const h = Math.floor(diff / (1000*60*60)); diff -= h*60*60*1000;
+        const m = Math.floor(diff / (1000*60)); diff -= m*60*1000;
+        const s = Math.floor(diff / 1000);
+        dd.textContent = d; hh.textContent = pad(h); mm.textContent = pad(m); ss.textContent = pad(s);
+      };
+      tick(); timer = setInterval(tick, 1000);
+    }
+  </script>
+</body>
+</html>
